@@ -1,0 +1,183 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 528px;
+  height: 581px;
+
+  background-color: $primaryBgColor;
+  box-shadow: 0px 1px 3px $shadowFirstModalColor, 0px 1px 1px $shadowSecondModalColor,
+    0px 2px 1px $shadowThirdModalColor;
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition-property: transform;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+
+  background-color: $primaryBgColor;
+  border-radius: 50%;
+  border: 1px solid $modalCloseBtnBorderColor;
+  outline: none;
+
+  transition-property: fill;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.close-btn:focus,
+.close-btn:hover {
+  fill: $accentColor;
+}
+
+.form__title {
+  display: block;
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.form__label {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+.form__field {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+  color: $secondaryTextColor;
+}
+
+.form__input {
+  display: block;
+  margin: 0;
+  padding: 11px 12px 11px 40px;
+  width: 100%;
+  height: 40px;
+
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition-property: border-color;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.form__icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  display: inline-block;
+
+  width: 18px;
+  height: 18px;
+
+  transition-property: fill;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.form__input:focus,
+.form__field:focus-within .form__icon {
+  border-color: $accentColor;
+  fill: $accentColor;
+}
+
+.form__text {
+  padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  resize: none;
+}
+
+.form__text::placeholder {
+  color: $placeholderColor;
+}
+
+.agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.form__agreement {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.agreement__check {
+  display: inline-block;
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+
+  outline: 2px solid $darkColor;
+  outline-offset: -2px;
+  border-radius: 2px;
+  fill: $accentColor;
+
+  transition-property: outline-color;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.agreement__icon {
+  opacity: 0;
+
+  transition-property: opacity;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+.agreement__input:checked + .agreement__check {
+  outline-color: $accentColor;
+}
+
+.agreement__input:checked + .agreement__check .agreement__icon {
+  opacity: 1;
+}
+
+.agreement__text {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.71;
+  text-align: center;
+}
+
+.agreement__link {
+  display: inline-block;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 1.71;
+  color: $accentColor;
+  text-underline-position: under;
+}

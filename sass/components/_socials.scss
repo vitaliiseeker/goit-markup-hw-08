@@ -1,0 +1,77 @@
+.socials {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.socials__item {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background-color: $footerSocialsBgColor;
+  transition-property: background-color, fill;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.socials__link {
+  display: inline-block;
+  padding: 12px;
+}
+// .socials__link--light-bg {
+// }
+.socials__link--dark-bg {
+  & .socials__icon {
+    fill: $lightColor;
+  }
+}
+.socials__icon {
+  width: 20px;
+  height: 20px;
+  fill: $iconColor;
+
+  transition-property: background-color, fill;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.socials__item:focus,
+.socials__item:hover,
+.socials__item:focus .socials__icon,
+.socials__item:hover .socials__icon {
+  background-color: $accentColor;
+  fill: $lightColor;
+}
+
+.footer__socials {
+  margin-left: 70px;
+  margin-right: 93px;
+  padding-top: 12px;
+}
+
+.footer-socials .socials-list {
+  justify-content: start;
+}
+
+.footer-socials .socials-item {
+  background-color: $footerSocialsBgColor;
+
+  transition-property: background-color;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.footer-socials .socials-icon {
+  fill: $lightColor;
+}
+
+.footer-socials .socials-item:focus,
+.footer-socials .socials-item:hover {
+  background-color: $accentColor;
+}

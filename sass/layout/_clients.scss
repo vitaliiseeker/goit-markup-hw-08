@@ -1,0 +1,54 @@
+.clients__title {
+  margin-bottom: 50px;
+}
+
+.clients__list {
+  display: flex;
+  gap: 30px;
+}
+
+.clients__item {
+  width: 170px;
+  height: 92px;
+  border: 1px solid $iconColor;
+  border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.clients__brand {
+  display: block;
+  padding: 14px 32px;
+}
+
+.clients__icon {
+  width: 106px;
+  height: 60px;
+  fill: $iconColor;
+
+  transition-property: fill;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.clients__item {
+  &:focus {
+    border-color: $accentColor;
+  }
+
+  &:hover {
+    border-color: $accentColor;
+  }
+}
+
+.clients__item {
+  &:focus .clients__icon {
+    fill: $accentColor;
+  }
+
+  &:hover .clients__icon {
+    fill: $accentColor;
+  }
+}

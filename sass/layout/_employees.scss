@@ -1,0 +1,41 @@
+.employees {
+  background-color: $secondaryBgColor;
+}
+
+.employees__title {
+  margin-bottom: 50px;
+}
+
+.employees__list {
+  display: flex;
+  gap: 30px;
+}
+
+.employees__item {
+  width: calc((100% - 90px) / 4);
+  text-align: center;
+  background-color: $primaryBgColor;
+  box-shadow: 0px 1px 3px $shadowFirstEmployeesColor, 0px 1px 1px $shadowSecondEmployeesColor,
+    0px 2px 1px $shadowThirdEmployeesColor;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.employees__wrap {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.employees__name {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.employees__position {
+  margin-bottom: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.19;
+  color: $secondaryTextColor;
+}

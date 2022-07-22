@@ -1,0 +1,28 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  background-color: $backdropBgColor;
+
+  opacity: 1;
+  transition-property: opacity, visibility;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+  transition-property: transform;
+  transition-duration: $transitionDuration;
+  transition-timing-function: $transitionTimingFunction;
+}
