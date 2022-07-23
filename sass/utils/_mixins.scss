@@ -1,0 +1,14 @@
+@mixin colorize($colors, $baseSelector) {
+    @each $color in $colors {
+        $idx: index($colors, $color);
+
+        #{$baseSelector}:nth-child(#{$idx}) {
+            background-color: #{$color};
+        }
+    }
+}
+
+
+// $colors: "#F44336", "#3F51B5", "#4CAF50", "#00BCD4", "#E91E63", "#009688";
+
+// @include colorize($colors, ".features-item");

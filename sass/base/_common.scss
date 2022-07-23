@@ -1,3 +1,24 @@
 #page.no-scroll {
   overflow: hidden;
 }
+
+body {
+  font-family: $FontFamily, sans-serif;
+  letter-spacing: $LetterSpacing;
+
+  color: $primaryTextColor;
+  background-color: $primaryBgColor;
+}
+
+// body.modal-open {
+//   overflow: hidden;
+// }
+
+.title {
+  margin-bottom: 0;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}

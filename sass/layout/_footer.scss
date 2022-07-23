@@ -8,6 +8,11 @@
   display: flex;
 }
 
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
 .footer__subtitle {
   margin-bottom: 20px;
   font-weight: 700;
@@ -101,6 +106,7 @@
 }
 
 .subscription__btn {
+
   &:focus,
   &:hover {
     transform: scale(1.05);

@@ -34,21 +34,15 @@
 }
 
 .clients__item {
-  &:focus {
-    border-color: $accentColor;
-  }
 
+  &:focus,
   &:hover {
     border-color: $accentColor;
   }
-}
 
-.clients__item {
-  &:focus .clients__icon {
-    fill: $accentColor;
-  }
-
+  &:focus .clients__icon,
   &:hover .clients__icon {
     fill: $accentColor;
   }
+
 }
