@@ -1,8 +1,19 @@
 .filter {
     display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 8px;
+    margin-bottom: 40px;
+
+    @include mq(tab) {
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    @include mq(desk) {
+        margin-bottom: 50px;
+    }
 }
 
 .filter__btn {

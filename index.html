@@ -16,29 +16,53 @@
   <!-- Шапка -->
   <header class="header">
     <div class="container header__container">
-      <nav class="nav">
-        <a class="logo header__logo" href="./index.html">Web<span
-            class="logo__part logo__part--dark-color">Studio</span>
-        </a>
-        <ul class="nav__list list">
-          <li class="nav__item"><a class="nav__link nav__link--current link " href="./index.html">Студия</a></li>
-          <li class="nav__item"><a class="nav__link link" href="./portfolio.html">Портфолио</a></li>
-          <li class="nav__item"><a class="nav__link link" href="">Контакты</a></li>
+      <a class="logo header__logo" href="./index.html">Web<span class="logo__part logo__part--dark-color">Studio</span>
+      </a>
+      <button class="mob-menu__btn" type="button" aria-expanded="false" aria-controls="mob-menu" data-menu-button>
+        <svg class="mob-menu__icon" width="40" height="40" aria-label="Переключатель мобильного меню">
+          <use class="mob-menu__icon-menu" href="./images/icons.svg#icon-menu">
+          </use>
+          <use class="mob-menu__icon-close" href="./images/icons.svg#icon-menu-close">
+          </use>
+        </svg>
+      </button>
+      <div class="mob-menu" id="menu" data-menu>
+        <nav class="nav">
+          <ul class="nav__list list">
+            <li class="nav__item"><a class="nav__link nav__link--current link " href="./index.html">Студия</a></li>
+            <li class="nav__item"><a class="nav__link link" href="./portfolio.html">Портфолио</a></li>
+            <li class="nav__item"><a class="nav__link link" href="">Контакты</a></li>
+          </ul>
+        </nav>
+        <ul class="contacts header__contacts list">
+          <li class="contacts__item">
+            <a class="contacts__link link" href="mailto:info@devstudio.com">
+              <svg class="contacts__icon">
+                <use href="./images/icons.svg#icon-envelope" width="16" height="12"></use>
+              </svg>info@devstudio.com</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link link" href="tel:+380961111111">
+              <svg class="contacts__icon">
+                <use href="./images/icons.svg#icon-smartphone" width="10" height="16"></use>
+              </svg>+38 096 111 11 11</a>
+          </li>
         </ul>
-      </nav>
-      <ul class="contacts list">
-        <li class="contacts__item">
-          <a class="contacts__link link" href="mailto:info@devstudio.com">
-            <svg class="contacts__icon">
-              <use href="./images/icons.svg#icon-envelope" width="16px" height="12px"></use>
-            </svg>info@devstudio.com</a>
-        </li>
-        <li class="contacts__item">
-          <a class="contacts__link link" href="tel:+380961111111">
-            <svg class="contacts__icon">
-              <use href="./images/icons.svg#icon-smartphone" width="10" height="16"></use>
-            </svg>+38 096 111 11 11</a>
-        </li>
+        <ul class="mob-menu__socials list">
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">Instagram</a>
+          </li>
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">Twitter</a>
+          </li>
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">Facebook</a>
+          </li>
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
       </ul>
     </div>
   </header>
@@ -109,13 +133,34 @@
         <h2 class="directions__title title">Чем мы занимаемся</h2>
         <ul class="directions__list list">
           <li class="directions__item" data-alt="Десктопные приложения">
-            <img src="./images/img-1.jpg" alt="Разработка десктопных приложений" width="370" height="294" />
+            <picture>
+              <source type="image/webp"
+                srcset="./images/directions/directions1.webp 1x, ./images/directions/directions1@2x.webp 2x">
+              <source type="image/jpg"
+                srcset="./images/directions/directions1.jpg 1x, ./images/directions/directions1@2x.jpg 2x">
+              <img class="services__img" src="./images/directions/directions1.jpg"
+                alt="Разработка десктопных приложений" width="370" height="294">
+            </picture>
           </li>
           <li class="directions__item" data-alt="Мобильные приложения">
-            <img src="./images/img-2.jpg" alt="Разработка мобильных приложений" width="370" height="294" />
+            <picture>
+              <source type="image/webp"
+                srcset="./images/directions/directions2.webp 1x, ./images/directions/directions2@2x.webp 2x">
+              <source type="image/jpg"
+                srcset="./images/directions/directions2.jpg 1x, ./images/directions/directions2@2x.jpg 2x">
+              <img class="services__img" src="./images/directions/directions2.jpg" alt="Разработка мобильных приложений"
+                width="370" height="294">
+            </picture>
           </li>
           <li class="directions__item" data-alt="Дизайнерские решения">
-            <img src="./images/img-3.jpg" alt="Создание современного web-дизайна" width="370" height="294" />
+            <picture>
+              <source type="image/webp"
+                srcset="./images/directions/directions3.webp 1x, ./images/directions/directions3@2x.webp 2x">
+              <source type="image/jpg"
+                srcset="./images/directions/directions3.jpg 1x, ./images/directions/directions3@2x.jpg 2x">
+              <img class="services__img" src="./images/directions/directions3.jpg"
+                alt="Создание современного web-дизайна" width="370" height="294">
+            </picture>
           </li>
         </ul>
       </div>
@@ -126,8 +171,29 @@
         <h2 class="employees__title title">Наша команда</h2>
         <ul class="employees__list list">
           <li class="employees__item">
-            <img class="employees__photo" src="./images/igor-demyanenko.jpg" alt="Игорь Демьяненко" width="270"
-              height="260" />
+            <picture>
+              <source media="(min-width: 1200px)" type="image/webp" srcset="
+                ./images/employees/270/igor-demyanenko.webp    1x,
+                ./images/employees/270/igor-demyanenko@2x.webp 2x">
+              <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                .images//employees/270/igor-demyanenko.jpg    1x,
+                ./images/employees/270/igor-demyanenko@2x.jpg 2x">
+              <source media="(min-width: 768px)" type="image/webp" srcset="
+                ./images/employees/354/igor-demyanenko.webp    1x,
+                ./images/employees/354/igor-demyanenko@2x.webp 2x">
+              <source media="(min-width: 768px)" type="image/jpg" srcset="
+                .images//employees/354/igor-demyanenko.jpg    1x,
+                .images//employees/354/igor-demyanenko@2x.jpg 2x">
+              <source media="(max-width: 767px)" type="image/webp" srcset="
+                ./images/employees/450/igor-demyanenko.webp    1x,
+                ./images/employees/450/igor-demyanenko@2x.webp 2xs">
+              <source media="(max-width: 767px)" type="image/jpg" srcset="
+                ./images/employees/450/igor-demyanenko.jpg    1x,
+                ./images/employees/450/igor-demyanenko@2x.jpg 2x">
+              <img class="employees__photo" loading="lazy" src="./images/employees/450/igor-demyanenko.jpg"
+                alt="Игорь Демьяненко" width="450" height="460">
+            </picture>
+
             <div class="employees__wrap">
               <h3 class="employees__name">Игорь Демьяненко</h3>
               <p class="employees__position">Product Designer</p>
@@ -168,7 +234,28 @@
             </div>
           </li>
           <li class="employees__item">
-            <img class="employees__photo" src="./images/olga-repina.jpg" alt="Ольга Репина" width="270" height="260" />
+            <picture>
+              <source media="(min-width: 1200px)" type="image/webp" srcset="
+                ./images/employees/270/olga-repina.webp    1x,
+                ./images/employees/270/olga-repina@2x.webp 2x">
+              <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                ./images/employees/270/olga-repina.jpg    1x,
+                ./images/employees/270/olga-repina@2x.jpg 2x">
+              <source media="(min-width: 768px)" type="image/webp" srcset="
+                ./images/employees/354/olga-repina.webp    1x,
+                ./images/employees/354/olga-repina@2x.webp 2x">
+              <source media="(min-width: 768px)" type="image/jpg" srcset="
+                .images//employees/354/olga-repina.jpg    1x,
+                .images//employees/354/olga-repina@2x.jpg 2x">
+              <source media="(max-width: 767px)" type="image/webp" srcset="
+                ./images/employees/450/olga-repina.webp    1x,
+                ./images/employees/450/olga-repina@2x.webp 2xs">
+              <source media="(max-width: 767px)" type="image/jpg" srcset="
+                ./images/employees/450/olga-repina.jpg    1x,
+                ./images/employees/450/olga-repina@2x.jpg 2x">
+              <img class="employees__photo" loading="lazy" src="./images/employees/450/olga-repina.jpg"
+                alt="Ольга Репина" width="450" height="460">
+            </picture>
             <div class="employees__wrap">
               <h3 class="employees__name">Ольга Репина</h3>
               <p class="employees__position">Frontend Developer</p>
@@ -209,8 +296,28 @@
             </div>
           </li>
           <li class="employees__item">
-            <img class="employees__photo" src="./images/nikolai-tarasov.jpg" alt="Николай Тарасов" width="270"
-              height="260" />
+            <picture>
+              <source media="(min-width: 1200px)" type="image/webp" srcset="
+                ./images/employees/270/nikolai-tarasov.webp    1x,
+                ./images/employees/270/nikolai-tarasov@2x.webp 2x">
+              <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                ./images/employees/270/nikolai-tarasov.jpg    1x,
+                ./images/employees/270/nikolai-tarasov@2x.jpg 2x">
+              <source media="(min-width: 768px)" type="image/webp" srcset="
+                ./images/employees/354/nikolai-tarasov.webp    1x,
+                ./images/employees/354/nikolai-tarasov@2x.webp 2x">
+              <source media="(min-width: 768px)" type="image/jpg" srcset="
+                .images//employees/354/nikolai-tarasov.jpg    1x,
+                .images//employees/354/nikolai-tarasov@2x.jpg 2x">
+              <source media="(max-width: 767px)" type="image/webp" srcset="
+                ./images/employees/450/nikolai-tarasov.webp    1x,
+                ./images/employees/450/nikolai-tarasov@2x.webp 2x">
+              <source media="(max-width: 767px)" type="image/jpg" srcset="
+                ./images/employees/450/nikolai-tarasov.jpg    1x,
+                ./images/employees/450/nikolai-tarasov@2x.jpg 2x">
+              <img class="employees__photo" loading="lazy" src="./images/employees/450/nikolai-tarasov.jpg"
+                alt="Николай Тарасов" width="450" height="460">
+            </picture>
             <div class="employees__wrap">
               <h3 class="employees__name">Николай Тарасов</h3>
               <p class="employees__position">Marketing</p>
@@ -251,8 +358,28 @@
             </div>
           </li>
           <li class="employees__item">
-            <img class="employees__photo" src="./images/mikhail-ermakov.jpg" alt="Михаил Ермаков" width="270"
-              height="260" />
+            <picture>
+              <source media="(min-width: 1200px)" type="image/webp" srcset="
+                ./images/employees/270/mikhail-ermakov.webp    1x,
+                ./images/employees/270/mikhail-ermakov@2x.webp 2x">
+              <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                ./images/employees/270/mikhail-ermakov.jpg    1x,
+                ./images/employees/270/mikhail-ermakov@2x.jpg 2x">
+              <source media="(min-width: 768px)" type="image/webp" srcset="
+                ./images/employees/354/mikhail-ermakov.webp    1x,
+                ./images/employees/354/mikhail-ermakov@2x.webp 2x">
+              <source media="(min-width: 768px)" type="image/jpg" srcset="
+                .images//employees/354/mikhail-ermakov.jpg    1x,
+                .images//employees/354/mikhail-ermakov@2x.jpg 2x">
+              <source media="(max-width: 767px)" type="image/webp" srcset="
+                ./images/employees/450/mikhail-ermakov.webp    1x,
+                ./images/employees/450/mikhail-ermakov@2x.webp 2x">
+              <source media="(max-width: 767px)" type="image/jpg" srcset="
+                ./images/employees/450/mikhail-ermakov.jpg    1x,
+                ./images/employees/450/mikhail-ermakov@2x.jpg 2x">
+              <img class="employees__photo" loading="lazy" src="./images/employees/450/mikhail-ermakov.jpg"
+                alt="Михаил Ермаков" width="450" height="460">
+            </picture>
             <div class="employees__wrap">
               <h3 class="employees__name">Михаил Ермаков</h3>
               <p class="employees__position">UI Designer</p>
@@ -349,6 +476,7 @@
   <!-- Футер -->
   <footer class="footer">
     <div class="container footer__container">
+
       <div class="footer__information">
         <a class="logo footer__logo" href="./index.html">Web<span
             class="logo__part logo__part--light-color">Studio</span>
@@ -369,7 +497,6 @@
           </ul>
         </address>
       </div>
-
       <div class="footer__socials">
         <h2 class="footer__subtitle">Присоединяйтесь</h2>
         <ul class="socials">
@@ -415,6 +542,7 @@
           </button>
         </div>
       </form>
+
     </div>
   </footer>
 
@@ -451,6 +579,7 @@
         </div>
         <label class="form__label" for="comments">Комментарий</label>
         <textarea class="form__input form__text" name="comments" id="comments" placeholder="Введите текст"></textarea>
+
         <label class="agreement form__agreement">
           <input class="agreement__input visually-hidden" type="checkbox">
           <span class="agreement__check">

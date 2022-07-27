@@ -16,29 +16,54 @@
   <!-- Шапка -->
   <header class="header">
     <div class="container header__container">
-      <nav class="nav">
-        <a class="logo header__logo" href="./index.html">Web<span
-            class="logo__part logo__part--dark-color">Studio</span>
-        </a>
-        <ul class="nav__list list">
-          <li class="nav__item"><a class="nav__link link " href="./index.html">Студия</a></li>
-          <li class="nav__item"><a class="nav__link nav__link--current link" href="./portfolio.html">Портфолио</a></li>
-          <li class="nav__item"><a class="nav__link link" href="">Контакты</a></li>
+      <a class="logo header__logo" href="./index.html">Web<span class="logo__part logo__part--dark-color">Studio</span>
+      </a>
+      <button class="mob-menu__btn" type="button" aria-expanded="false" aria-controls="mob-menu" data-menu-button>
+        <svg class="mob-menu__icon" width="40" height="40" aria-label="Переключатель мобильного меню">
+          <use class="mob-menu__icon-menu" href="./images/icons.svg#icon-menu">
+          </use>
+          <use class="mob-menu__icon-close" href="./images/icons.svg#icon-menu-close">
+          </use>
+        </svg>
+      </button>
+      <div class="mob-menu" id="menu" data-menu>
+        <nav class="nav">
+          <ul class="nav__list list">
+            <li class="nav__item"><a class="nav__link link " href="./index.html">Студия</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--current link" href="./portfolio.html">Портфолио</a>
+            </li>
+            <li class="nav__item"><a class="nav__link link" href="">Контакты</a></li>
+          </ul>
+        </nav>
+        <ul class="contacts header__contacts list">
+          <li class="contacts__item">
+            <a class="contacts__link link" href="mailto:info@devstudio.com">
+              <svg class="contacts__icon">
+                <use href="./images/icons.svg#icon-envelope" width="16" height="12"></use>
+              </svg>info@devstudio.com</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link link" href="tel:+380961111111">
+              <svg class="contacts__icon">
+                <use href="./images/icons.svg#icon-smartphone" width="10" height="16"></use>
+              </svg>+38 096 111 11 11</a>
+          </li>
         </ul>
-      </nav>
-      <ul class="contacts list">
-        <li class="contacts__item">
-          <a class="contacts__link link" href="mailto:info@devstudio.com">
-            <svg class="contacts__icon">
-              <use href="./images/icons.svg#icon-envelope" width="16px" height="12px"></use>
-            </svg>info@devstudio.com</a>
-        </li>
-        <li class="contacts__item">
-          <a class="contacts__link link" href="tel:+380961111111">
-            <svg class="contacts__icon">
-              <use href="./images/icons.svg#icon-smartphone" width="10" height="16"></use>
-            </svg>+38 096 111 11 11</a>
-        </li>
+        <ul class="mob-menu__socials list">
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">Instagram</a>
+          </li>
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">Twitter</a>
+          </li>
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">Facebook</a>
+          </li>
+          <li class="mob-menu__item">
+            <a class="mob-menu__link link" href="" target="_blank" rel="noopener nofollow noreferrer">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
       </ul>
     </div>
   </header>
@@ -58,7 +83,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/technoquack.jpg" alt="Технокряк" width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project1.webp    1x,
+                    ./images/project/370/project1@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project1-min.jpg    1x,
+                    ./images/project/370/project1@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project1.webp    1x,
+                    ./images/project/354/project1@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project1-min.jpg    1x,
+                    .images//project/354/project1@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project1.webp    1x,
+                    ./images/project/450/project1@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project1-min.jpg    1x,
+                    ./images/project/450/project1@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project1-min.jpg" alt="Технокряк"
+                    width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -76,8 +122,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/golden-star.jpg" alt="Постер New Orlean vs Golden Star"
-                  width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project2.webp    1x,
+                    ./images/project/370/project2@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project2-min.jpg    1x,
+                    ./images/project/370/project2@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project2.webp    1x,
+                    ./images/project/354/project2@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project2-min.jpg    1x,
+                    .images//project/354/project2@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project2.webp    1x,
+                    ./images/project/450/project2@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project2-min.jpg    1x,
+                    ./images/project/450/project2@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project2-min.jpg"
+                    alt="Постер New Orlean vs Golden Star" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -95,7 +161,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/seafood.jpg" alt="Ресторан Seafood" width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project3.webp    1x,
+                    ./images/project/370/project3@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project3-min.jpg    1x,
+                    ./images/project/370/project3@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project3.webp    1x,
+                    ./images/project/354/project3@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project3-min.jpg    1x,
+                    .images//project/354/project3@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project3.webp    1x,
+                    ./images/project/450/project3@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project3-min.jpg    1x,
+                    ./images/project/450/project3@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project3-min.jpg"
+                    alt="Ресторан Seafood" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -113,7 +200,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/prime.jpg" alt="Проект Prime" width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project4.webp    1x,
+                    ./images/project/370/project4@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project4-min.jpg    1x,
+                    ./images/project/370/project4@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project4.webp    1x,
+                    ./images/project/354/project4@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project4-min.jpg    1x,
+                    .images//project/354/project4@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project4.webp    1x,
+                    ./images/project/450/project4@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project4-min.jpg    1x,
+                    ./images/project/450/project4@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project4-min.jpg"
+                    alt="Проект Prime" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -131,7 +239,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/boxes.jpg" alt="Проект Boxes" width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project5.webp    1x,
+                    ./images/project/370/project5@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project5-min.jpg    1x,
+                    ./images/project/370/project5@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project5.webp    1x,
+                    ./images/project/354/project5@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project5-min.jpg    1x,
+                    .images//project/354/project5@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project5.webp    1x,
+                    ./images/project/450/project5@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project5-min.jpg    1x,
+                    ./images/project/450/project5@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project5-min.jpg"
+                    alt="Проект Boxes" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -149,8 +278,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/inspiration.jpg" alt="Inspiration has no Borders"
-                  width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project6.webp    1x,
+                    ./images/project/370/project6@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project6-min.jpg    1x,
+                    ./images/project/370/project6@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project6.webp    1x,
+                    ./images/project/354/project6@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project6-min.jpg    1x,
+                    .images//project/354/project6@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project6.webp    1x,
+                    ./images/project/450/project6@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project6-min.jpg    1x,
+                    ./images/project/450/project6@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project6-min.jpg"
+                    alt="Inspiration has no Borders" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -168,13 +317,32 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/limited-edition.jpg" alt="Издание Limited Edition"
-                  width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project7.webp    1x,
+                    ./images/project/370/project7@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project7-min.jpg    1x,
+                    ./images/project/370/project7@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project7.webp    1x,
+                    ./images/project/354/project7@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project7-min.jpg    1x,
+                    .images//project/354/project7@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project7.webp    1x,
+                    ./images/project/450/project7@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project7-min.jpg    1x,
+                    ./images/project/450/project7@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project7-min.jpg"
+                    alt="Издание Limited Edition" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
-                  <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
-                    функционала и
-                    сервисов. Все
-                    это позволит посетителю получить
+                  <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем функционала
+                    и
+                    сервисов. Все это позволит посетителю получить
                     исчерпывающие сведения о компании или частном лице.</p>
                 </div>
               </div>
@@ -187,7 +355,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/lab.jpg" alt="Проект LAB" width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                  ./images/project/370/project8.webp    1x,
+                  ./images/project/370/project8@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                  ./images/project/370/project8-min.jpg    1x,
+                  ./images/project/370/project8@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                  ./images/project/354/project8.webp    1x,
+                  ./images/project/354/project8@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                  .images//project/354/project8-min.jpg    1x,
+                  .images//project/354/project8@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                  ./images/project/450/project8.webp    1x,
+                  ./images/project/450/project8@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                  ./images/project/450/project8-min.jpg    1x,
+                  ./images/project/450/project8@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project8-min.jpg" alt="Проект LAB"
+                    width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -205,8 +394,28 @@
           <li class="work-examples__item">
             <a href="" class="work-examples__link link">
               <div class="work-examples__wrap">
-                <img class="work-examples__img" src="./images/growing-business.jpg" alt="Growing Business"
-                  width="370" />
+                <picture>
+                  <source media="(min-width: 1200px)" type="image/webp" srcset="
+                    ./images/project/370/project9.webp    1x,
+                    ./images/project/370/project9@2x.webp 2x">
+                  <source media="(min-width: 1200px)" type="image/jpg" srcset="
+                    ./images/project/370/project9-min.jpg    1x,
+                    ./images/project/370/project9@2x-min.jpg 2x">
+                  <source media="(min-width: 768px)" type="image/webp" srcset="
+                    ./images/project/354/project9.webp    1x,
+                    ./images/project/354/project9@2x.webp 2x">
+                  <source media="(min-width: 768px)" type="image/jpg" srcset="
+                    .images//project/354/project9-min.jpg    1x,
+                    .images//project/354/project9@2x-min.jpg 2x">
+                  <source media="(max-width: 767px)" type="image/webp" srcset="
+                    ./images/project/450/project9.webp    1x,
+                    ./images/project/450/project9@2x.webp 2x">
+                  <source media="(max-width: 767px)" type="image/jpg" srcset="
+                    ./images/project/450/project9-min.jpg    1x,
+                    ./images/project/450/project9@2x-min.jpg 2x">
+                  <img class="staff__photo" loading="lazy" src="./images/project/450/project9-min.jpg"
+                    alt="Growing Business" width="450" height="294">
+                </picture>
                 <div class="work-examples__overlay">
                   <p class="work-examples__text">Ресурс предлагает комплексные предложения с разным уровнем
                     функционала и
@@ -228,6 +437,7 @@
   <!-- Футер -->
   <footer class="footer">
     <div class="container footer__container">
+
       <div class="footer__information">
         <a class="logo footer__logo" href="./index.html">Web<span
             class="logo__part logo__part--light-color">Studio</span>
@@ -248,7 +458,6 @@
           </ul>
         </address>
       </div>
-
       <div class="footer__socials">
         <h2 class="footer__subtitle">Присоединяйтесь</h2>
         <ul class="socials">
@@ -294,6 +503,7 @@
           </button>
         </div>
       </form>
+
     </div>
   </footer>
   <script src="./js/menu.js"></script>

@@ -3,9 +3,35 @@
 }
 
 .header__container {
-  display: flex;
+  @media screen and (max-width: ($tablet - 0.02)) {
+
+    position: relative;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    height: 60px;
+  }
+
+  @include mq(tab) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+
+  @include mq(desk) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
 }
 
-.header__logo {
-  margin-right: 93px;
+.header__contacts {
+  @include mq(mob-only) {
+    margin-top: 40px;
+  }
+
+  @include mq(tab-only) {
+    justify-content: left;
+    gap: 10px;
+    margin-left: auto;
+  }
 }

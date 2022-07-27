@@ -1,11 +1,16 @@
 .logo {
-  display: block;
+  display: inline-block;
   font-family: $logoFontFamily, sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
   text-decoration: none;
   color: $accentColor;
+
+  @include mq(desk) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .logo__part--dark-color {
