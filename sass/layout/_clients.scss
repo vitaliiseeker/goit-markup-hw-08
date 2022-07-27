@@ -1,14 +1,19 @@
 .clients__title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .clients__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
+
+  @include mq(desk) {
+    flex-wrap: nowrap;
+  }
 }
 
 .clients__item {
-  width: 170px;
+  width: calc((100% - 30px) / 2);
   height: 92px;
   border: 1px solid $iconColor;
   border-radius: 4px;
@@ -16,16 +21,30 @@
   transition-property: border-color;
   transition-duration: $transitionDuration;
   transition-timing-function: $transitionTimingFunction;
+
+  @include mq(tab) {
+    width: calc((100% - 60px) / 3);
+  }
+
+  @include mq(desk) {
+    width: calc((100% - 150px) / 6);
+  }
 }
 
 .clients__brand {
-  display: block;
-  padding: 14px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
 }
 
 .clients__icon {
+  display: block;
   width: 106px;
   height: 60px;
+
   fill: $iconColor;
 
   transition-property: fill;

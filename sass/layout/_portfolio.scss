@@ -5,14 +5,34 @@
 }
 
 .work-examples__item {
-    width: calc((100% - 60px) / 3);
-    height: auto;
+    max-width: 450px;
     background-color: $primaryBgColor;
     border: 1px solid $workExamplesBorderColor;
 
     transition-property: box-shadow;
     transition-duration: $transitionDuration;
     transition-timing-function: $transitionTimingFunction;
+
+    @include mq(tab) {
+        max-width: calc((100% - 30px) / 2);
+    }
+
+    @include mq(desk) {
+        max-width: calc((100% - 60px) / 3);
+    }
+
+}
+
+.work-examples__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.work-examples__wrap {
+    position: relative;
+
+    overflow: hidden;
 }
 
 .work-examples__img {
@@ -20,6 +40,7 @@
 }
 
 .work-examples__footer {
+    flex-grow: 1;
     margin: 0;
     padding: 20px 24px;
 }
@@ -37,13 +58,6 @@
     font-size: 16px;
     line-height: 1.88;
     color: $secondaryTextColor;
-}
-
-.work-examples__wrap {
-    position: relative;
-    width: 370px;
-    height: 294px;
-    overflow: hidden;
 }
 
 .work-examples__overlay {

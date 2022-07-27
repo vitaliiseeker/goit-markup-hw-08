@@ -1,0 +1,115 @@
+.mob-menu {
+    @include mq(mob-only) {
+        position: absolute;
+        top: -60px;
+        left: -1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 48px 40px;
+
+        width: calc(100% + 2px);
+        min-height: 450px;
+        height: 100vh;
+
+        visibility: hidden;
+        transform: translatey(-100%);
+        overflow: scroll;
+
+        background-color: $primaryBgColor;
+        box-shadow: 0px 4px 8px rgb(0 0 0 / 4%), 0px 2px 4px rgb(0 0 0 / 8%), 0px 1px 3px rgb(0 0 0 / 16%);
+
+        transition-property: transform, visibility;
+        transition-duration: $transitionDuration;
+        transition-timing-function: $transitionTimingFunction;
+    }
+
+    @include mq(tab) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        margin-left: 88px;
+    }
+
+    @include mq(desk) {
+        margin-left: 93px;
+    }
+}
+
+.mob-menu.is-open {
+    visibility: visible;
+    transform: translateY(60px);
+}
+
+.mob-menu__icon-menu,
+.mob-menu__icon-close {
+    transition-property: fill;
+    transition-duration: $transitionDuration;
+    transition-timing-function: $transitionTimingFunction;
+}
+
+.mob-menu__btn {
+    display: none;
+
+    @include mq(mob-only) {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        display: block;
+        z-index: 10;
+
+        margin-right: auto;
+        padding: 0;
+
+        border: none;
+        background-color: transparent;
+
+        &:focus .mob-menu__icon,
+        &:hover .mob-menu__icon {
+            fill: $accentColor;
+
+            transition-property: fill;
+            transition-duration: $transitionDuration;
+            transition-timing-function: $transitionTimingFunction;
+        }
+
+        & .mob-menu__icon-close {
+            opacity: 0;
+        }
+
+        &.is-open .mob-mob-menu__icon-close {
+            opacity: 1;
+        }
+
+        &.is-open .menu__icon-menu {
+            opacity: 0;
+        }
+    }
+}
+
+.mob-menu__socials {
+    @include mq(mob-only) {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-top: 64px;
+        font-size: 18px;
+        line-height: 1.22;
+        color: $accentColor;
+    }
+
+    display: none;
+}
+
+.mob-menu__item {
+    &:not(:last-child)::after {
+        content: '';
+        width: 22px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: 1px solid $menuBorderColor;
+        transform: rotate(90deg);
+
+    }
+}

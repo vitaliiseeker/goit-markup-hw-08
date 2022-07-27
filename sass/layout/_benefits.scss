@@ -1,11 +1,31 @@
 .benefits__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: block;
+
+  @include mq(tab) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 }
 
 .benefits__item {
-  width: calc((100% - 90px) / 4);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:not(:last-child) {
+    @include mq(mob-only) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include mq(tab) {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+
+  @include mq(desk) {
+    flex-basis: calc((100% - 90px) / 4);
+  }
 }
 
 .benefits__wrap {
@@ -13,7 +33,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-  width: 270px;
+  max-width: 450px;
   height: 120px;
   background-color: $secondaryBgColor;
   border-radius: 4px;
@@ -24,6 +44,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
+  text-align: center;
   text-transform: uppercase;
 }
 

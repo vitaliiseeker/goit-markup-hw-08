@@ -1,23 +1,34 @@
 .modal {
   position: absolute;
-  top: 50%;
+  top: 93px;
   left: 50%;
 
   display: flex;
   flex-direction: column;
+
+  margin-left: auto;
+  margin-right: auto;
   padding: 40px;
-  width: 528px;
-  height: 581px;
+  max-width: 450px;
+  width: calc(100% - 30px);
+  // height: 609px;
+
+  // width: 528px;
+  // height: 581px;
 
   background-color: $primaryBgColor;
   box-shadow: 0px 1px 3px $shadowFirstModalColor, 0px 1px 1px $shadowSecondModalColor,
     0px 2px 1px $shadowThirdModalColor;
   border-radius: 4px;
 
-  transform: translate(-50%, -50%) scale(1);
+  transform: translatex(-50%) scale(1);
   transition-property: transform;
   transition-duration: $transitionDuration;
   transition-timing-function: $transitionTimingFunction;
+
+  @include mq(desk) {
+    min-width: 528px;
+  }
 }
 
 .close-btn {
@@ -63,6 +74,7 @@
   line-height: 1.17;
   letter-spacing: 0.01em;
 }
+
 .form__field {
   position: relative;
   margin-bottom: 10px;
@@ -127,17 +139,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+
+  margin-top: 20px;
+  margin-bottom: 31px;
+  font-size: 12px;
+  letter-spacing: calc(14 / 12);
   cursor: pointer;
 }
 
-.form__agreement {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
+// .form__agreement {
+//   margin-bottom: 31px;
+// }
+
 .agreement__check {
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 5px;
   width: 16px;
   height: 15px;
 
@@ -158,26 +174,38 @@
   transition-duration: $transitionDuration;
   transition-timing-function: $transitionTimingFunction;
 }
-.agreement__input:checked + .agreement__check {
+
+.agreement__input:checked+.agreement__check {
   outline-color: $accentColor;
 }
 
-.agreement__input:checked + .agreement__check .agreement__icon {
+.agreement__input:checked+.agreement__check .agreement__icon {
   opacity: 1;
 }
 
 .agreement__text {
-  display: inline-block;
-  font-size: 14px;
-  line-height: 1.71;
+  // display: inline-block;
+  font-size: 12px;
+  line-height: calc(14.06 / 12);
+
+  // font-size: 14px;
+  // line-height: 1.71;
   text-align: center;
 }
 
 .agreement__link {
-  display: inline-block;
+  // display: inline-block;
   text-decoration: underline;
-  font-size: 14px;
-  line-height: 1.71;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  // font-size: 14px;
+  // line-height: 1.71;
   color: $accentColor;
   text-underline-position: under;
+}
+
+.form__btn {
+  display: block;
+  margin: 0 auto;
 }
